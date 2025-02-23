@@ -1,0 +1,4 @@
+echo "🚀 Start pre-commit hook"
+echo "⏳ Run lint-staged to format and lint code ..."
+npx lint-staged
+echo "✅ pre-commit hook run successfully"

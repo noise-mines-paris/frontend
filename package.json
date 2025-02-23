@@ -8,15 +8,21 @@
 		"dev": "vite",
 		"format": "prettier --write .",
 		"format:check": "prettier --check .",
-		"preview": "vite preview"
+		"preview": "vite preview",
+		"prepare": "husky"
 	},
 	"dependencies": {
 		"preact": "^10.25.4"
 	},
 	"devDependencies": {
 		"@preact/preset-vite": "^2.10.1",
+		"husky": "^9.1.7",
+		"lint-staged": "^15.4.3",
 		"prettier": "3.5.2",
 		"typescript": "~5.7.2",
 		"vite": "^6.1.0"
+	},
+	"lint-staged": {
+		"**/*": "prettier --write --ignore-unknown"
 	}
 }
