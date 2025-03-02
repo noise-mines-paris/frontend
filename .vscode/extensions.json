@@ -1,6 +1,7 @@
 {
 	"recommendations": [
 		"esbenp.prettier-vscode", // Our default formatter
-		"shd101wyy.markdown-preview-enhanced" // To visualize as PDF markdown files
+		"shd101wyy.markdown-preview-enhanced", // To visualize as PDF markdown files
+		"bradlc.vscode-tailwindcss" // Tailwind css classes auto completion
 	]
 }
