@@ -1,4 +1,4 @@
-import { Button } from './Button';
+import { Button, colors, sizes, variants } from './Button';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 export default {
@@ -7,6 +7,18 @@ export default {
 	tags: ['autodocs'],
 	argTypes: {
 		onClick: { action: 'onClick' },
+		color: {
+			options: colors,
+			control: { type: 'radio' },
+		},
+		variant: {
+			options: variants,
+			control: { type: 'radio' },
+		},
+		size: {
+			options: sizes,
+			control: { type: 'radio' },
+		},
 	},
 };
 
@@ -18,6 +30,7 @@ export const FullConfiguration = {
 		variant: 'contained',
 		size: 'md',
 		onClick: () => console.log('Hello world'),
+		iconLeft: 'plus',
 	},
 };
 
