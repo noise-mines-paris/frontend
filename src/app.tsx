@@ -1,7 +1,7 @@
 import { useState } from 'preact/hooks';
 import { LocationProvider, ErrorBoundary } from 'preact-iso';
-import { MainLayout } from './features/MainLayout';
-import { AppRouter } from './Router';
+import { MainLayout } from '#features/MainLayout';
+import { AppRouter } from '#src/Router';
 
 export const App = () => {
 	const [isRouting, setIsRouting] = useState(false);

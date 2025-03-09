@@ -1,7 +1,7 @@
 import { lazy, Router, Route } from 'preact-iso';
 
-const Page1 = lazy(() => import('./pages/Page1'));
-const Page2 = lazy(() => import('./pages/Page2'));
+const Page1 = lazy(() => import('#src/pages/Page1'));
+const Page2 = lazy(() => import('#src/pages/Page2'));
 
 export const AppRouter = ({
 	onLoadStart,
