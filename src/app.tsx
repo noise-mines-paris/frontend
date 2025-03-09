@@ -1,45 +1,21 @@
 import { useState } from 'preact/hooks';
-import preactLogo from './assets/preact.svg';
-import viteLogo from '/vite.svg';
-import { Button } from './components/Button';
+import { LocationProvider, ErrorBoundary } from 'preact-iso';
+import { MainLayout } from './features/MainLayout';
+import { AppRouter } from './Router';
 
-export function App() {
-	const [count, setCount] = useState(0);
+export const App = () => {
+	const [isRouting, setIsRouting] = useState(false);
 
 	return (
-		<main className="bg-white">
-			<div>
-				<a href="https://vite.dev" target="_blank" rel="noreferrer">
-					<img src={viteLogo} className="logo" alt="Vite logo" />
-				</a>
-				<a href="https://preactjs.com" target="_blank" rel="noreferrer">
-					<img src={preactLogo} className="logo preact" alt="Preact logo" />
-				</a>
-			</div>
-			<h1>Vite + Preact</h1>
-			<div className="card">
-				<Button
-					onClick={() => setCount((count) => count + 1)}
-					label={`Count is ${count}`}
-				/>
-				<p>
-					Edit <code>src/app.tsx</code> and save to test HMR
-				</p>
-			</div>
-			<p>
-				Check out{' '}
-				<a
-					href="https://preactjs.com/guide/v10/getting-started#create-a-vite-powered-preact-app"
-					target="_blank"
-					rel="noreferrer"
-				>
-					create-preact
-				</a>
-				, the official Preact + Vite starter
-			</p>
-			<p className="read-the-docs">
-				Click on the Vite and Preact logos to learn more
-			</p>
-		</main>
+		<LocationProvider scope="/">
+			<ErrorBoundary onError={(e) => console.log(e)}>
+				<MainLayout isRouting={isRouting}>
+					<AppRouter
+						onLoadStart={() => setIsRouting(true)}
+						onLoadEnd={() => setIsRouting(false)}
+					/>
+				</MainLayout>
+			</ErrorBoundary>
+		</LocationProvider>
 	);
-}
+};
